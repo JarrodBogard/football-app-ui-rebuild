@@ -1,29 +1,45 @@
-import { useEffect } from "react";
 import { useStatsContext } from "../hooks/useStatsContext";
+import { fadeIn } from "react-animations";
+import styled, { keyframes } from "styled-components";
 
-const DetailsCard = () => {
-  const { dispatch } = useStatsContext();
+import QBCard from "./QBCard";
+import WRTECard from "./WRTECard";
+import RBCard from "./RBCard";
+import KCard from "./KCard";
 
-  useEffect(() => {
-    const fetchSpecPlayerStats = async () => {
-      const response = await fetch(
-        "https://api.sportsdata.io/api/nfl/fantasy/json/PlayerSeasonStats/2021REG?key=61fd0979be90419cbd6dc53c4e6f2df3"
-      );
+const DetailsCard = ({ player }) => {
+  const { specStats } = useStatsContext();
 
-      const json = await response.json();
+  const fadeInAnimation = keyframes`${fadeIn}`;
+  const FadeInDiv = styled.div`
+    animation: 1s ${fadeInAnimation};
+  `;
 
-      if (response.ok) {
-        dispatch({
-          type: "SET_SPECS",
-          payload: json,
-        });
-      }
-    };
-
-    fetchSpecPlayerStats();
-  }, [dispatch]);
-
-  return <div className="details">details</div>;
+  return (
+    <FadeInDiv className="details">
+      <img
+        src={player.PhotoUrl}
+        alt={`${player.FirstName} ${player.LastName}`}
+      />
+      <p>
+        {player.FirstName} {player.LastName} (
+        {player.InjuryStatus === null ? "Healthy" : "Injured"})
+      </p>
+      <ul style={{ listStyle: "none" }}>
+        <li>Team: {player.Team}</li>
+        <li>Position: {player.Position}</li>
+        <h2 style={{ margin: "2.5px 0" }}>
+          Season Stats (Week: {specStats.Week})
+        </h2>
+        {player.Position === "QB" && <QBCard specStats={specStats} />}
+        {(player.Position === "WR" || player.Position === "TE") && (
+          <WRTECard specStats={specStats} />
+        )}
+        {player.Position === "RB" && <RBCard specStats={specStats} />}
+        {player.Position === "K" && <KCard specStats={specStats} />}
+      </ul>
+    </FadeInDiv>
+  );
 };
 
 export default DetailsCard;

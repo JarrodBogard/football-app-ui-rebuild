@@ -1,5 +1,5 @@
-import { PlayerContext } from "../contexts/PlayerContext";
 import { useContext } from "react";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 export const usePlayerContext = () => {
   const context = useContext(PlayerContext);

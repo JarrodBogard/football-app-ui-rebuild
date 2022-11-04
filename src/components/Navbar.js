@@ -18,9 +18,11 @@ const Navbar = () => {
         </Link>
         <nav>
           {user ? (
-            <div>
+            <div className="logged">
               <span>{user.username}</span>
-              <button onClick={handleClick}>Log Out</button>
+              <Link to="/login" onClick={handleClick}>
+                Log Out
+              </Link>
             </div>
           ) : (
             <div>

@@ -1,10 +1,6 @@
 import { useState } from "react";
-import { usePlayerContext } from "../hooks/usePlayerContext";
-import { useAuthContext } from "../hooks/useAuthContext";
 
-const AddPlayerForm = () => {
-  const { dispatch } = usePlayerContext();
-  const { user } = useAuthContext();
+const AddPlayerForm = ({ statsDispatch, stats, user, dispatch }) => {
   const [state, setState] = useState({
     user_id: user.id,
     first_name: "",
@@ -70,13 +66,18 @@ const AddPlayerForm = () => {
 
       setError(null);
       dispatch({ type: "CREATE_PLAYER", payload: json });
+      const foundPlayer = stats.find(
+        (player) =>
+          player.DraftKingsName === `${json.first_name} ${json.last_name}`
+      );
+      statsDispatch({ type: "ADD_GEN_STATS", payload: foundPlayer });
     }
   };
 
   return (
-    <form className="addplayer-form" onSubmit={handleSubmit}>
+    <form className="add-player" onSubmit={handleSubmit}>
       <label htmlFor="playerName">
-        Search Players:{" "}
+        <span>Search Players: </span>
         <input
           type="text"
           onChange={handleChange}

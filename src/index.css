@@ -1,17 +1,323 @@
-header .container {
-  margin: 0 auto;
-  padding: 10px 20px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+div#root,
+div.app,
+div.pages {
+  width: 100%;
+  height: 100%;
+}
+
+/* figure out how to get rid of this rule */
+/* div#root {
+  background: url("./images/homepage-football.jpg") no-repeat center fixed;
+  background-size: cover;
+} */
+
+div.container {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 10px 20px;
+  width: 100%;
+  font-family: fantasy;
 }
 
-header a {
+div.container a {
   color: black;
   text-decoration: none;
 }
 
-.pages {
+div.container nav {
+  font-size: 18px;
+}
+
+div.container nav a:first-child {
+  padding-right: 10px;
+}
+
+div.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: url("./images/homepage-football.jpg") no-repeat center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+form.add-player {
+  align-self: center;
+  margin-top: 125px;
+}
+
+form.add-player label span {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: unset;
+  text-align: center;
+  color: white;
+}
+
+ul.players {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin: 100px 75px 75px;
+  padding: 25px;
+  list-style: none;
+  overflow-x: hidden;
+  font-family: fantasy;
+}
+
+li.player-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(229 228 235 / 68%);
+  box-shadow: 2px 2px 4px white;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: 0.5s;
+}
+
+li.player-details img {
+  border-radius: 50%;
+}
+
+li.player-details:hover {
+  -moz-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+li.player-details button {
+  width: 100px;
+  height: 30px;
+  margin: 8px;
+  padding: 4px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(14, 73, 250);
+  box-shadow: 2px 2px 4px black;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: 0.25s ease-out;
+}
+
+li.player-details button:hover {
+  -moz-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+span.delete {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  /* color: white; */
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.623);
+  box-shadow: 2px 2px 4px black;
+  transition: 0.25s ease-out;
+}
+
+span.delete:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.25s;
+}
+
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+div.details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  padding: 25px;
+  font-size: 18px;
+  font-family: emoji;
+  filter: none;
+  color: white;
+  border-radius: 4px;
+  background-color: #000000d4;
+  box-shadow: 2px 2px 4px black;
+}
+
+form.login,
+form.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  padding: 20px;
+  width: 400px;
+  gap: 10px;
+}
+
+form.login input,
+form.signup input {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #4169e163;
+  opacity: 100%;
+}
+
+form.login input::placeholder,
+form.signup input::placeholder {
+  font-size: 1rem;
+  color: white;
+}
+
+form.login input:focus,
+form.signup input:focus {
+  outline: 0.1rem solid white;
+  color: white;
+}
+
+form.login input:-webkit-autofill,
+form.login input:-webkit-autofill,
+form.login input:-webkit-autofill:hover,
+form.login input:-webkit-autofill:hover,
+form.signup input:-webkit-autofill:focus,
+form.signup input:-webkit-autofill:focus,
+form.signup
+  input:-webkit-autofill:active
+  form.signup
+  input:-webkit-autofill:active {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+form.login button,
+form.signup button {
+  align-self: center;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: #1746d5d1;
+}
+
+div.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: url("./images/login-photo.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+form.add-player label input {
+  width: 350px;
+  height: 1.75rem;
+  margin: 0px 8px;
+  border-radius: 10px;
+  background: rgb(229 228 235 / 68%);
+}
+
+form.add-player label input:focus {
+  outline: none;
+  background: rgb(229 228 235 / 68%);
+}
+
+form.add-player button {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  padding: 4px;
+  cursor: pointer;
+  color: white;
+  font-family: unset;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(14, 73, 250);
+  box-shadow: 2px 2px 4px black;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: 0.25s;
+}
+
+form.add-player button:hover {
+  -moz-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+ul.gen-stats {
+  /* display: flex;
+  flex-direction: column; */
+  list-style: none;
+  font-weight: bold;
+  color: black;
+}
+
+ul.gen-stats li p {
+  width: 110%;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+div.logged span {
+  color: white;
+  padding-right: 12px;
 }
