@@ -1,11 +1,12 @@
-const RBCard = (specStats) => {
+const RBCard = ({ specStats }) => {
+  console.log(specStats);
+  console.log(specStats.RushingYards);
   return (
     <>
       <h4 style={{ margin: "2.5px 0", color: "rgb(14, 73, 250)" }}>
         (Rushing Stats)
       </h4>
       <li>Rushing Attempts: {specStats.RushingAttempts}</li>
-      <li>Rushing Yards: {specStats.RushingYards}</li>
       <li>Rushing Yards: {specStats.RushingYards}</li>
       <li>Yards Per Attempt: {specStats.RushingYardsPerAttempt}</li>
       <li>Rushing TDs: {specStats.RushingTouchdowns}</li>

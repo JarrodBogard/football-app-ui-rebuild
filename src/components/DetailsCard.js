@@ -32,9 +32,7 @@ const DetailsCard = ({ player }) => {
           Season Stats (Week: {specStats.Week})
         </h2>
         {player.Position === "QB" && <QBCard specStats={specStats} />}
-        {(player.Position === "WR" || player.Position === "TE") && (
-          <WRTECard specStats={specStats} />
-        )}
+        {(player.Position === "WR" || player.Position === "TE") && (<WRTECard specStats={specStats} />)}
         {player.Position === "RB" && <RBCard specStats={specStats} />}
         {player.Position === "K" && <KCard specStats={specStats} />}
       </ul>

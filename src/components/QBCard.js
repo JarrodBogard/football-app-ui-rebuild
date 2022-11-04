@@ -8,7 +8,7 @@ const QBCard = ({ specStats }) => {
       <li>Pass Completions: {specStats.PassingCompletions}</li>
       <li>Passing Yards: {specStats.PassingYards}</li>
       <li>Pass Percentage: {specStats.PassingCompletionPercentage}%</li>
-      <li>Passing Yards Per Attempt: {specStats.PassingYardsPerAttempt}%</li>
+      <li>Passing Yards Per Attempt: {specStats.PassingYardsPerAttempt}</li>
       <li>Pass Percentage: {specStats.PassingYardsPerCompletion}%</li>
       <li>Passing TDs Per Game: {specStats.PassingTouchdowns}</li>
       <h4 style={{ margin: "2.5px 0", color: "rgb(14, 73, 250)" }}>
