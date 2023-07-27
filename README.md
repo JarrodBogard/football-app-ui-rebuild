@@ -1,8 +1,9 @@
-# Getting Started with Create React App
+# How My Football App Works
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1. Start by creating a username and password or login if you already have one.
+![image](https://github.com/JarrodBogard/football-app-ui-rebuild/assets/98401586/ecc5ca59-62e5-4453-8c23-9e9ff34a05fb)
 
-## Available Scripts
+### 2. 
 
 In the project directory, you can run:
 
