@@ -7,7 +7,7 @@ My Football App is an application that allows users to track NFL players stats. 
 
 ![image](https://github.com/JarrodBogard/football-app-ui-rebuild/assets/98401586/ecc5ca59-62e5-4453-8c23-9e9ff34a05fb)
 
-### 2. View and add players from your homepage. Simply type the name of the player into the search bar at the top of the homepage and click the "add player" button to add new players to your list.
+### 2. View and add players from your homepage. Simply type the name of the player into the search bar, at the top of the homepage, and click the "add player" button to add new players to your list.
 
 ![image](https://github.com/JarrodBogard/football-app-ui-rebuild/assets/98401586/e3454b34-7259-4d15-aed0-20626f50b176)
 
