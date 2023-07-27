@@ -13,13 +13,13 @@ My Football App is an application that allows users to track NFL players stats. 
 
 ![image](https://github.com/JarrodBogard/football-app-ui-rebuild/assets/98401586/c63e1cfa-26d8-40d7-81bd-cc39ef05e4e6)
 
-### 3. View detailed player stats by clicking on the "details" button.
+### 3. View detailed player stats by clicking on the "Details" button.
 
 ![image](https://github.com/JarrodBogard/football-app-ui-rebuild/assets/98401586/fa0c9353-60ed-442e-b3b0-fac84d37414c)
 
 ![image](https://github.com/JarrodBogard/football-app-ui-rebuild/assets/98401586/1c6d1e5f-f7e5-4957-b81f-28a3997faaa3)
 
-### 4. Delete players from your list by clicking on the red button with the "x" in the top left corner of the player's card.
+### 4. Delete a player from your list by clicking on the red button, with the "x", in the top left corner of the player's card.
 
 ![image](https://github.com/JarrodBogard/football-app-ui-rebuild/assets/98401586/b0a8100c-ea7e-422b-bcff-d9b1f1a1e7f0)
 
