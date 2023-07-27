@@ -1,5 +1,5 @@
-# What is MyFootball App?
-MyFootball App is an application that allows users to track NFL players football stats. Users can easily add players to their list of players get up-to-date stats on their current performance.
+# What is My Football App?
+My Football App is an application that allows users to track NFL players stats. Users can easily add and save players to a list and get up-to-date stats on each player's current performance.
 
 ## How My Football App Works
 
